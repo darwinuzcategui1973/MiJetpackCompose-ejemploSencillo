@@ -12,6 +12,7 @@ import com.gmd.darwin.mijetpackcompose.servicios.ApiServicio
 import kotlinx.coroutines.launch
 
 class PeliculaVistaModelo() : ViewModel(){
+    /*
     var peliculaListResponse:List<Pelicula> by mutableStateOf(listOf())
     private var errorMessage: String by mutableStateOf("")
     fun getPeliculaList() {
@@ -27,4 +28,6 @@ class PeliculaVistaModelo() : ViewModel(){
             }
         }
     }
+
+     */
 }

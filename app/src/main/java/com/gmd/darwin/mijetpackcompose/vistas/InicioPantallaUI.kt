@@ -17,17 +17,18 @@ import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 import coil.size.Scale
 import coil.transform.CircleCropTransformation
-import com.gmd.darwin.mijetpackcompose.modelo.Pelicula
+import com.gmd.darwin.mijetpackcompose.modelo.Movie
+
 
 //modelo
 
 @Composable
-fun PeliculaItem(pelicula: Pelicula) {
+fun MovieItem(movie:  Movie) {
     Card(
         modifier = Modifier
-            .padding(8.dp, 4.dp)
+            .padding(16.dp, 8.dp)
             .fillMaxWidth()
-            .height(110.dp), shape = RoundedCornerShape(8.dp), elevation = 4.dp
+            .height(150.dp), shape = RoundedCornerShape(8.dp), elevation = 4.dp
     ) {
         Surface() {
 
@@ -39,7 +40,7 @@ fun PeliculaItem(pelicula: Pelicula) {
 
                 Image(
                     painter = rememberImagePainter(
-                        data = pelicula.imageUrl,
+                        data = movie.imageUrl,
 
                         builder = {
                             scale(Scale.FILL)
@@ -48,7 +49,7 @@ fun PeliculaItem(pelicula: Pelicula) {
 
                         }
                     ),
-                    contentDescription = pelicula.descripcion,
+                    contentDescription = movie.desc,
                     modifier = Modifier
                         .fillMaxHeight()
                         .weight(0.2f)
@@ -63,12 +64,12 @@ fun PeliculaItem(pelicula: Pelicula) {
                         .weight(0.8f)
                 ) {
                     Text(
-                        text = pelicula.nombre,
+                        text = movie.name,
                         style = MaterialTheme.typography.subtitle1,
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = pelicula.categoria,
+                        text = movie.category,
                         style = MaterialTheme.typography.caption,
                         modifier = Modifier
                             .background(
@@ -77,7 +78,7 @@ fun PeliculaItem(pelicula: Pelicula) {
                             .padding(4.dp)
                     )
                     Text(
-                        text = pelicula.descripcion,
+                        text = movie.desc,
                         style = MaterialTheme.typography.body1,
                         maxLines = 2,
                         overflow = TextOverflow.Ellipsis

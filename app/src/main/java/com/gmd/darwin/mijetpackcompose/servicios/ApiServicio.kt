@@ -1,7 +1,7 @@
 package com.gmd.darwin.mijetpackcompose.servicios
 
 import android.util.Log
-import com.gmd.darwin.mijetpackcompose.modelo.Pelicula
+import com.gmd.darwin.mijetpackcompose.modelo.Movie
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
@@ -9,7 +9,7 @@ import retrofit2.http.GET
 interface ApiServicio {
     //https://howtodoandroid.com/apis/movielist.json
     @GET("movielist.json")
-    suspend fun getPeliculas() :List<Pelicula>
+    suspend fun getPeliculas() :List<Movie>
     companion object {
         var apiServicio: ApiServicio? =null
         fun  getInstance() : ApiServicio {
